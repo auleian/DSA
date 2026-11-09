@@ -11,6 +11,3 @@ func reverse(arr []int)  {
 	}
 }
 
-func main(){
-	
-}
