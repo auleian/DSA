@@ -34,3 +34,22 @@ func TestWindowAverages(t *testing.T) {
         }
     }
 }
+
+func TestIsPalindrome(t *testing.T) {
+    tests := []struct {
+        input string
+        want  bool
+    }{
+        {"race a car", false},
+        {"abba", true},
+        {"", true},
+        {"A man, a plan, a canal: Panama", true},
+    }
+
+    for _, tc := range tests {
+        got := isPalindrome(tc.input)
+        if got != tc.want {
+            t.Errorf("isPalindrome(%q) = %v, want %v", tc.input, got, tc.want)
+        }
+    }
+}
