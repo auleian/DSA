@@ -53,3 +53,27 @@ func TestIsPalindrome(t *testing.T) {
         }
     }
 }
+
+func TestLongestUnique(t *testing.T){
+    tests := []struct {
+        input string
+        want int
+    }{
+        {"abcabcbb", 3},
+        {"bbbbb", 1},
+        {"pwwkew", 3}, 
+        {"", 0},
+        {"abcdef", 6},
+        {"a", 1}, 
+        {"au", 2}, 
+        {"dvdf", 3}, 
+        {"tmmzuxt", 5},
+    }
+
+    for _, tc := range tests {
+        got := longestUnique(tc.input)
+        if got != tc.want {
+            t.Errorf("longestUnique(%q) = %v, want %v", tc.input, got, tc.want)
+        }
+    }
+}

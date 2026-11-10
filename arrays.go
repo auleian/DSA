@@ -61,3 +61,6 @@ func isPalindrome(s string) bool {
 	}
 	return true
 }
+
+//Exercise 2
+func longestUnique(s string) int 
