@@ -63,4 +63,22 @@ func isPalindrome(s string) bool {
 }
 
 //Exercise 2
-func longestUnique(s string) int 
+func longestUnique(s string) int {
+    seen := make(map[byte]bool)
+    start := 0
+    best := 0
+
+    for end := 0; end < len(s); end++ {
+        for seen[s[end]] {
+            delete(seen, s[start])   
+            start++                  
+        }
+
+        seen[s[end]] = true          
+
+        if end-start+1 > best {
+            best = end-start+1            
+        }
+    }
+    return best
+} 
