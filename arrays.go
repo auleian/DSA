@@ -38,6 +38,15 @@ func windowAverages(arr []int, k int) []float64 {
 	return result
 }
 
+func prefixSums(arr []int) []int {
+    prefix := make([]int, len(arr))   
+    prefix[0] = arr[0]
+    for i := 1; i < len(arr); i++ {
+        prefix[i] = prefix[i-1] + arr[i]
+    }
+    return prefix
+}
+
 // Exercise
 func isPalindrome(s string) bool {
 	left := 0
@@ -82,3 +91,22 @@ func longestUnique(s string) int {
     }
     return best
 } 
+
+//Exercise 3
+func rangeSum(arr []int, a, b int) int {
+	if len(arr) == 0 {return 0}
+
+	prefix := make([]int, len(arr))
+
+	prefix[0] = arr[0]
+
+	for i := 1; i < len(arr); i++ {
+		prefix[i] = prefix[i-1] + arr[i]
+	}
+
+	if a == 0 {
+		return prefix[b]
+	}
+
+	return prefix[b] - prefix[a - 1]
+}
