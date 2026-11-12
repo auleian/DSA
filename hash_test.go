@@ -48,3 +48,24 @@ func TestTwoSum(t *testing.T) {
 		}
 	}
 }
+
+func TestIsAnagram(t *testing.T){
+	tests := []struct{
+		input_1 string
+		input_2 string
+		want bool
+	}{
+		{"anagram", "nagaram", true},
+		{"rat", "car", false},
+		{"ab", "a", false},
+		{"", "", true},
+		{"aacc", "ccac", false},
+	}
+
+	for _, tc := range tests {
+		got := isAnagram(tc.input_1, tc.input_2)
+		if got != tc.want {
+			t.Errorf("isAnagram(%v, %v) = %v, want %v", tc.input_1, tc.input_2, got, tc.want)
+		}
+	}
+}

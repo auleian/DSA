@@ -45,3 +45,5 @@ func twoSum(nums []int, target int) []int {
 
 	return nil
 }
+
+func isAnagram(s string, t string) bool
