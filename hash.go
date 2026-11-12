@@ -32,4 +32,16 @@ func containsDuplicate(nums []int) bool {
 }
 
 //Exercise 2
-func twoSum(nums []int, target int) []int
+func twoSum(nums []int, target int) []int {
+	seen := make(map[int]int)
+	
+	for i, x := range nums {
+		compliment := target - x
+		if j, ok := seen[compliment]; ok {
+			return []int{j, i}
+		}
+		seen[x] = i
+	}
+
+	return nil
+}
