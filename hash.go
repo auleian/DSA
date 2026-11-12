@@ -30,3 +30,6 @@ func containsDuplicate(nums []int) bool {
 
 	return false
 }
+
+//Exercise 2
+func twoSum(nums []int, target int) []int
