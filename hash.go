@@ -2,7 +2,10 @@
 
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"reflect"
+)
 
 
 func counter() {
@@ -46,4 +49,19 @@ func twoSum(nums []int, target int) []int {
 	return nil
 }
 
-func isAnagram(s string, t string) bool
+//Exercise 3
+func isAnagram(s string, t string) bool {
+	if len(s) != len(t) {
+		return false
+	}
+
+	countS := make(map[byte]int)
+	countT := make(map[byte]int)
+
+	for i := 0; i < len(s); i++ {
+		countS[s[i]]++
+		countT[t[i]]++   
+	}
+
+	return reflect.DeepEqual(countS, countT)
+}
