@@ -37,3 +37,18 @@ func maxProfitV2(prices []int) int {
 
     return maxProfit
 }
+
+//1299
+func swap(arr []int) []int {
+    num := -1
+
+    for i := len(arr) - 1; i >= 0; i-- {
+        cur := arr[i]
+        arr[i] = num
+        if cur > num {
+            num = cur
+        }
+    }
+
+    return arr
+}
