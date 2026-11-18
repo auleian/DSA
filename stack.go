@@ -16,3 +16,24 @@ func isValid(s string) bool {
 	}
 	return len(stack) == 0
 }
+
+func maxDepth(s string) int {
+	max := 0
+	open := 0
+
+	for _, char := range s {
+		switch char {
+			case '(':
+				open++
+				if open > max {
+					max = open
+				}
+			case ')':
+				open--
+			default:
+				continue
+		}
+	}
+
+	return max
+}
