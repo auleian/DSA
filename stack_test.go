@@ -41,3 +41,23 @@ func TestMaxDepth(t *testing.T){
 		}
 	}
 }
+
+func TestRemoveOuterParentheses (t *testing.T){
+	tests := []struct{
+		input string
+		want string
+	}{
+		{"(()())(())", "()()()"},
+		{"(()())(())(()(()))", "()()()()(())"},
+		{"()()", ""},
+		{"()", ""},
+	}
+
+	for _, tc := range tests {
+		got := removeOuterParentheses(tc.input)
+
+		if got != tc.want {
+			t.Errorf("removeOuterParentheses(%q) = %q, want %q", tc.input, got, tc.want)
+		}
+	}
+}

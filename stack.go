@@ -37,3 +37,5 @@ func maxDepth(s string) int {
 
 	return max
 }
+
+func removeOuterParentheses(s string) string
